@@ -16,7 +16,11 @@ start_ui:
 create_ui_ts: 
 	npx create-react-app ui_ts --template typescript
 	
-
+deno:
+	cat bashrc_denovm >> ~/.bashrc
+#denovm:
+#	. ~/.bashrc && denovm --version && denovm run one/cmd.ts
+#	. ~/.bashrc && denovm run one/cmd.ts
 
 create_ui_ng:
 	#nvm install 14
