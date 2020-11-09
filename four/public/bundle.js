@@ -1,0 +1,1 @@
+(()=>{"use strict";console.log("running from ts to js..")})();
