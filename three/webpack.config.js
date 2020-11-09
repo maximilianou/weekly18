@@ -20,6 +20,10 @@ module.exports = {
         path: path.resolve(__dirname, 'public'),
     },
     devServer: {
+        contentBase: [
+            path.join(__dirname, 'public'), 
+            path.join(__dirname, 'assets')
+        ],
         port: 9000
     }
 }
