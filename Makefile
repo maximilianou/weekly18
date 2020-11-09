@@ -22,6 +22,17 @@ deno:
 #	. ~/.bashrc && denovm --version && denovm run one/cmd.ts
 #	. ~/.bashrc && denovm run one/cmd.ts
 
+three:
+	tsc --init
+	npm -y init
+	npm install webpack webpack-cli ts-loader -D
+	npm install typescript -D
+	mkdir src && touch src/index.ts
+	mkdir public && touch public/index.html 
+	mkdir assets && touch assets/swagger.yaml 
+	touch webpack.config.js
+	npm install webpack-dev-server -D
+
 create_ui_ng:
 	#nvm install 14
 	#nvm use 14

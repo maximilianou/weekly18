@@ -1,0 +1,14 @@
+.learning {
+    background-color: steelblue;
+    color: wheat;
+    border-radius: 6%;
+    margin: 2px;
+    min-width: 300px;
+}
+.cooking {
+    background-color: slategrey;
+    color: bisque;
+    border-radius: 6%;
+    margin: 2px;
+    min-width: 300px;
+}
