@@ -14,14 +14,14 @@ const getTodos = async (req: Request, res: Response): Promise<void> => {
 
 const addTodo = async (req: Request, res: Response): Promise<void> => {
   try{
-    const body = req.body as Pick<ITodo, "name" | "description " | "status">;
+    //const body = req.body as Pick<ITodo, "name" | "status" | "description " >;
     const todo: ITodo = new Todo({ 
-      name: body.name,
-      description: body.description,
-      status: body.status,
+      name: req.body.name,
+      description: req.body.description,
+      status: req.body.status,
     });
     const newTodo: ITodo = await todo.save();
-    const allTodos: ITodo[] = await todo.find();
+    const allTodos: ITodo[] = await Todo.find();
     res.status(201).json({message: "Todo added", todo: newTodo, todos: allTodos});
   }catch(err){
     throw err;
@@ -55,7 +55,7 @@ const updateTodo = async (req: Request, res: Response):Promise<void> => {
 
 const deleteTodo = async (req: Request, res: Response):Promise<void> => {
   try{
-    const deleteTodo: ITodo | null = await Todo.findByIdAndRemove(
+    const deletedTodo: ITodo | null = await Todo.findByIdAndRemove(
       req.params.id
     );
     const allTodos: ITodo[] = Todo.find();
